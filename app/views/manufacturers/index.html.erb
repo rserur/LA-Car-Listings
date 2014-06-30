@@ -1,9 +1,13 @@
-<h2>All Manufacturers</h2>
+<h3>All Manufacturers</h3>
 
 <ol>
 <% @manufacturers.each do |manufacturer| %>
 
-  <li><strong>Name:</strong> <%= manufacturer.name %>, <strong>Country:</strong> <%= manufacturer.country %></li>
+  <li>
+    <strong>Name:</strong> <%= manufacturer.name %>,
+    <strong>Country:</strong> <%= manufacturer.country %>
+    <strong><%= link_to "(View Manufacturer)", manufacturer_path(manufacturer) %></strong>
+  </li>
 
 <% end %>
 </ol>

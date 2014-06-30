@@ -9,6 +9,10 @@
 <body>
 
 <h1> Car Listings </h1>
+
+
+<h2><%= link_to "All Cars", cars_path %> | <%= link_to "Add Car", new_car_path %> | <%= link_to "All Manufacturers", manufacturers_path %> | <%= link_to "Add Manufacturer", new_manufacturer_path %></h2>
+
   <p>
     <%= flash[:notice] %>
   </p>
@@ -17,7 +21,5 @@
   </p>
 
   <%= yield %>
-
-<h3><%= link_to "All Cars", cars_path %> | <%= link_to "Add Car", new_car_path %> | <%= link_to "All Manufacturers", manufacturers_path %> | <%= link_to "Add Manufacturer", new_manufacturer_path %></h3>
 </body>
 </html>
