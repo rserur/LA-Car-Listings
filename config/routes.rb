@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :manufacturer do
-    resources :cars
-  end
+  resources :cars
+
+  resources :manufacturers
 
 end

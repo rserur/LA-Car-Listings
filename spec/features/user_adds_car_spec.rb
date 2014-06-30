@@ -15,13 +15,13 @@ feature 'user adds a car',%q(
   Upon successfully creating a car, I am redirected back to the index of cars.
 
 ) do
-  let(:manufacturer) { FactoryGirl.create(:manufacturer) }
+  let(:manufacturer) { FactoryGirl.create(:manufacturer, name: 'Mazda') }
 
   scenario 'create a valid car' do
 
     visit new_car_path
 
-    select(manufacturer.name, :from => 'Manufacturer')
+    select(manufacturer.name, :from => 'car[manufacturer_id]')
     fill_in "Color", with: "Lightning Red"
     fill_in "Year", with: "1986"
     fill_in "Mileage", with: "19213"
@@ -47,11 +47,10 @@ feature 'user adds a car',%q(
 
   scenario 'user enters a very old car' do
 
-    FactoryGirl.create(:manufacturer)
 
     visit new_car_path
 
-    select(manufacturer.name, :from => 'Manufacturer')
+    select(manufacturer.name, :from => 'car[manufacturer_id]')
     fill_in "Color", with: "Lightning Red"
     fill_in "Year", with: "1886"
     fill_in "Mileage", with: "19213"
@@ -64,11 +63,9 @@ feature 'user adds a car',%q(
 
   scenario 'user enters invalid mileage' do
 
-    FactoryGirl.create(:manufacturer)
-
     visit new_car_path
 
-    select(manufacturer.name, :from => 'Manufacturer')
+    select(manufacturer.name, :from => 'car[manufacturer_id]')
     fill_in "Color", with: "Lightning Red"
     fill_in "Year", with: "1886"
     fill_in "Mileage", with: "-19213"

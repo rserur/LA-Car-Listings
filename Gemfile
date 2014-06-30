@@ -30,7 +30,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'pry-rails'
+  gem 'launchy'
   gem 'rspec-rails'
   gem 'valid_attribute'
 end

@@ -17,7 +17,7 @@ feature 'user adds a car manufacturer',%q(
     visit new_manufacturer_path
 
     fill_in "Name", with: "Toyota"
-    fill_in "Country" with: "Japan"
+    fill_in "Country", with: "Japan"
 
     click_on "Create Manufacturer"
 
@@ -40,7 +40,7 @@ feature 'user adds a car manufacturer',%q(
 
   scenario 'user enters an existing manufacturer name' do
 
-    FactoryGirl.create(:manufacturer)
+    FactoryGirl.create(:manufacturer, name: "Toyota")
 
     visit new_manufacturer_path
 
