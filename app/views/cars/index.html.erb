@@ -1,0 +1,16 @@
+<h3>All Cars</h3>
+
+<ol>
+<% @cars.each do |car| %>
+  <li>
+    <ul>
+      <li><strong>Manufacturer:</strong> <%= car.manufacturer.name %></li>
+      <li><strong>Color:</strong> <%= car.color %></li>
+      <li><strong>Year:</strong> <%= car.year %></li>
+      <li><strong>Mileage:</strong> <%= car.mileage %></li>
+      <li><strong><%= link_to "View Car", car_path(car) %></strong></li>
+    </ul>
+  </li>
+  <br>
+<% end %>
+</ol>
